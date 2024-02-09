@@ -18,6 +18,7 @@ CF   = clang-format
 DC   = /usr/bin/dmd
 DUB  = /usr/bin/dub
 RUN  = $(DUB) run   --compiler=$(DC)
+TST  = $(DUB) test  --compiler=$(DC)
 BLD  = $(DUB) build --compiler=$(DC)
 
 # src
@@ -29,6 +30,10 @@ D += $(wildcard src/*.d*)
 .PHONY: all
 all: $(D)
 	$(RUN)
+
+.PHONY: test
+test: $(D)
+	$(TST)
 
 # format
 format: tmp/format_d

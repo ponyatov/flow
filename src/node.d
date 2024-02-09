@@ -6,4 +6,15 @@ class Node {
     this(string name) {
         this.name = name;
     }
+
+    override string toString() {
+        return "node:" ~ name;
+    }
+
+    unittest {
+        import std.stdio;
+
+        auto hello = new Node("Hello");
+        assert(hello.toString == "node:Hello");
+    }
 }
