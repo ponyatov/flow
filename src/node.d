@@ -7,9 +7,14 @@ module node;
 class Node {
     string name = null;
 
+    /// construct empty node
+    this() {
+    }
+
     /// construct flow node with
     /// @param[in] name
     this(string name) {
+        this();
         this.name = name;
     }
 
@@ -23,4 +28,8 @@ class Node {
         auto hello = new Node("Hello");
         assert(hello.toString == "node:Hello");
     }
+}
+
+/// function
+class Fn : Node {
 }
