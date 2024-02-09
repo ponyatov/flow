@@ -48,6 +48,10 @@ bin/$(MODULE): $(D) $(J) Makefile
 .PHONY: doc
 doc:
 
+# doc
+doxy: .doxygen
+	rm -rf docs ; doxygen $< 1>/dev/null
+
 # install
 .PHONY: install update gz ref
 install: doc gz
